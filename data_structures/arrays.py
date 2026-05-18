@@ -55,4 +55,16 @@ class Array:
                 return True
         return False
 
+    def is_empty(self):
+        return self.length == 0
+
+    def is_full(self):
+        return self.length == self.size
+
+    def __len__(self):
+        return self.length
+
+    def __repr__(self):
+        return str(self.array[:self.length])
+
     
