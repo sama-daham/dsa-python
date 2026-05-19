@@ -12,7 +12,11 @@ s.push(3)
 assert s.length == 3
 assert s.array[0] == 1
 assert s.array[2] == 3
-assert s.push(4) == "Error"    # full
+try:
+    s.push(4)
+    assert False
+except OverflowError:
+    pass
 print("push: OK")
 
 # --- pop ---
@@ -21,10 +25,14 @@ s.push(1)
 s.push(2)
 assert s.pop() == 2
 assert s.length == 1
-assert s.array[1] is None      # cleared
+assert s.array[1] is None
 
 empty = Stack(2)
-assert empty.pop() == -1       # empty stack
+try:
+    empty.pop()
+    assert False
+except IndexError:
+    pass
 print("pop: OK")
 
 # --- peek ---
@@ -32,10 +40,14 @@ s = Stack(3)
 s.push(5)
 s.push(10)
 assert s.peek() == 10
-assert s.length == 2           # not removed
+assert s.length == 2
 
 empty = Stack(2)
-assert empty.peek() == -1
+try:
+    empty.peek()
+    assert False
+except IndexError:
+    pass
 print("peek: OK")
 
 # --- is_empty ---
