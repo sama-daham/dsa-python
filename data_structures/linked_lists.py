@@ -81,3 +81,11 @@ class Linked_List:
                 return True
         return False
     
+    def __repr__(self):
+        result = []
+        current = self.head
+        while current:
+            result.append(str(current.val))
+            current = current.next
+        return "->".join(result) + "-> None"
+    
