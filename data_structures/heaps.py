@@ -16,6 +16,7 @@ class Heap:
         self.array[self.length] = val
         self.length+=1
         i = self.length-1
+        #bubble up
         while i>0:
             parent_index = (i-1)//2
             if self.array[i]>self.array[parent_index]:
@@ -33,6 +34,7 @@ class Heap:
         self.array[self.length-1] = None
         self.length -= 1
         i = 0
+        #bubble down
         while True:
             left = 2 * i + 1
             right = 2 * i + 2
