@@ -5,6 +5,7 @@ class Node:
       self.right = None
 
 class BST:
+    #not self-balancing like avl - that'd require tracking balance factor and updating w/changes
     def __init__(self):
         self.root = None
     
